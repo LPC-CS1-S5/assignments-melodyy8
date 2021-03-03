@@ -3,10 +3,10 @@ using namespace std;
 
 int main()
 {
-  char c1 = 'C';
-  int i = 2;
-  char c3 = c1 - i;
-  cout << c3 << endl;
+  int i, j, result;
+  i = 5; j = 10;
 
+  result = ( i < 10) ? j : i ;
+  cout << result << endl;
   return 0;
 }
