@@ -55,6 +55,11 @@ int isSame()
 
 int intDivision(int a, int b)
 {
+  if (b == 0)
+  {
+    cout << "Cannot divide by 0!\n";
+    exit(0);
+  }
   return a / b;
 }
 
