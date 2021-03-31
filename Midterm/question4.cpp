@@ -11,21 +11,29 @@ int toReturn;
 
 int main()
 {
-
+  return 0;
 }
 
 int getRdnum()
 {
   unsigned seed = time(0);
   srand(seed);
-  toReturn = rand() % 99;
+  toReturn = rand() % 100 + 1;
   return toReturn;
 }
 
-int getRdnum()
+int getRdnum(int n)
 {
   unsigned seed = time(0);
   srand(seed);
-  toReturn = rand() % 100;
+  toReturn = rand() % n + 1;
+  return toReturn;
+}
+
+int getRdnum(int n1, int n2)
+{
+  unsigned seed = time(0);
+  srand(seed);
+  toReturn = rand() % (n2 - n1 + 1) + n1;
   return toReturn;
 }
