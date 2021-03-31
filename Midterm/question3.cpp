@@ -34,7 +34,7 @@ int main()
 
 int getRdnum()
 {
-  int num = (rand() % 100) / 2;
+  int num = (rand() % 49) + 1;
   return num;
 }
 
