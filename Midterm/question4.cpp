@@ -11,6 +11,8 @@ int toReturn;
 
 int main()
 {
+  int r = getRdnum();
+  cout << r << endl;
   return 0;
 }
 
