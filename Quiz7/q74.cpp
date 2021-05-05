@@ -29,18 +29,25 @@ void makevector(vector<int> &vec, int size)
 void printvector(vector<int> vec)
 {
 	for(int v : vec)
-    	     cout << v << "\t";
+    cout << v << "\t";
 	cout << endl;
 }
 
 void deleteone(vector<int> &vec)
 {
   int usernum, deletecnt=0;
+  cout << "Please give the number you would like to delete: \n"; 
   cin >> usernum;
 
-  number::iterator iter;
-  for (i )
-
-  cout << usernum << "is deleted " << deletecnt << " times \n";
-	printvector(vec);
+  vector<int>::iterator iter;
+  for (iter = vec.begin(); iter != vec.end(); iter++)
+  {
+    int currInd = iter - vec.begin();
+    if (vec[iter - vec.begin()] == usernum)
+    {
+      vec.erase(iter);
+    }
+  }
+  cout << usernum << " is deleted " << deletecnt << " times \n";
+  printvector(vec);
 }
