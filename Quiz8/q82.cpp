@@ -4,12 +4,13 @@
 using namespace std;
 
 bool isAlphabet(char c);
+bool validateDomain(string s);
 
 int main()
 {
   string input;
-  bool valid;
-  int length = 0;
+  bool valid = true;
+  int idLength = 0;
   cout << "Please enter your user email: \n";
   cin >> input;
 
@@ -18,22 +19,47 @@ int main()
     valid = false;
   }
 
-  char validate[input.length()];
-
   for (int i = 0; input[i] != '@'; i++)
   {
-    length += 1;
+    idLength += 1;
   }
 
-  if (!( 5 <= length <= 15))
+  if (idLength < 5 || idLength > 15)
+  {
+    valid = false;
+  }
 
 
+  string domain = input.substr(input.length() - 3);
+  if (!validateDomain(domain))
+  {
+    valid = false;
+  }
 
+  if (valid)
+  {
+    cout << "Your email is valid! :)\n";
+  }
+  else 
+  {
+    cout << "Sorry! Your email is not valid! :(\n";
+  }
+  return 0;
 }
 
 bool isAlphabet(char c)
 {
-  if ('A' <= c <= 'Z' || 'a' <= c <= 'z')
+  if (isalpha(c))
+  {
+    return true;
+  }
+  return false;
+}
+
+bool validateDomain(string s)
+{
+  if (s == "com" || s == "org" || s == "net" || s == 
+  "edu" || s == "gov")
   {
     return true;
   }
