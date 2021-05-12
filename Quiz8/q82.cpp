@@ -3,7 +3,6 @@
 #include <cstring>
 using namespace std;
 
-bool isAlphabet(char c);
 bool validateDomain(string s);
 
 int main()
@@ -14,7 +13,7 @@ int main()
   cout << "Please enter your user email: \n";
   cin >> input;
 
-  if (!isAlphabet(input[0]))
+  if (!isalpha(input[0]))
   {
     valid = false;
   }
@@ -45,15 +44,6 @@ int main()
     cout << "Sorry! Your email is not valid! :(\n";
   }
   return 0;
-}
-
-bool isAlphabet(char c)
-{
-  if (isalpha(c))
-  {
-    return true;
-  }
-  return false;
 }
 
 bool validateDomain(string s)
