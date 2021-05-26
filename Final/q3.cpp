@@ -13,8 +13,29 @@ int main()
 
   while(i < SIZE1 && j < SIZE2)
   {
-    
-  }
+    if (numbers1[i] == numbers2[j])
+    {
+      i++;
+      j++;
+    }
+    else if (numbers2[j] < numbers1[i])
+    {
+      i++;
+    }
+    else if (numbers2[j] > numbers1[i])
+    {
+      cout << "Numbers1 is not a subset of Numbers2\n";
+    }
+  }    
+    if (i < SIZE1)
+    {
+      cout << "Numbers1 is not a subset of Numbers2\n";
+    }
+    else
+    {
+      cout << "Numbers1 is a subset of Numbers2 :)\n";
+    }
 
+  return 0;
 }
 
