@@ -35,17 +35,21 @@ int main()
 
   while (i < 16)
   {
+    cout << "Written into the file: \n";
     std::getline(ifs, g.last, ',');
+    cout << g.last << endl;
     std::getline(ifs, g.first, ',');
+    cout << g.first << endl;
     std::getline(ifs, g.ssn, ',');
-    string score;
+    cout << g.ssn << endl;
     for (int j = 0; j < N; j++)
     {
       std::getline(ifs, line, ',');
+      cout << "score " << line << endl;
       g.score.sc[j] = std::stod(line);
     }
-    std::getline(ifs, g.score.grade, ',');
-    
+    std::getline(ifs, g.score.grade);
+    cout << g.score.grade << endl;
     //writing into bin file
     cout << "Size of structure " << sizeof(Grade) << endl;
     ofs.write( (char *)&g, sizeof(g));
@@ -54,6 +58,5 @@ int main()
   }
 
   ofs.close();
-  cout << line << endl;
   return 0;
 }
