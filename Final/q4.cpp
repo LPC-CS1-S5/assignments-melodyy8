@@ -41,7 +41,7 @@ int main()
             word += words[k];
             k++;
           }
-          cout << "Found at " << i << " in " << word << endl;
+          cout << "Found at " << i << " index in " << word << endl;
         }
       }
     }
