@@ -23,10 +23,16 @@ int main()
 {
   //reading from txt file
   ifstream ifs;
+  ofstream ofs;
+
   Grade g;
   string line;
+
   ifs.open("grades.txt");
+  ofs.open("grades.bin");
+
   int i = 0;
+
   while (i < 16)
   {
     std::getline(ifs, g.last, ',');
@@ -35,15 +41,19 @@ int main()
     string score;
     for (int j = 0; j < N; j++)
     {
-      std::getline(ifs, score, ',');
-      g.score.sc[j] = stoi(score);
+      std::getline(ifs, line, ',');
+      g.score.sc[j] = stoi(line);
     }
     std::getline(ifs, g.score.grade, ',');
     
     //writing into bin file
-    
+    cout << "Size of structure " << sizeof(Grade) << endl;
+    ofs.write( (char *)&g, sizeof(g));
+
+    i++;
   }
 
- 
-
+  ofs.close();
+  cout << line << endl;
+  return 0;
 }
