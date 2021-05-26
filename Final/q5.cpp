@@ -28,8 +28,8 @@ int main()
   Grade g;
   string line;
 
-  ifs.open("grades.txt");
-  ofs.open("grades.bin");
+  ifs.open("Final/grades.txt");
+  ofs.open("Final/grades.bin");
 
   int i = 0;
 
@@ -42,7 +42,7 @@ int main()
     for (int j = 0; j < N; j++)
     {
       std::getline(ifs, line, ',');
-      g.score.sc[j] = stoi(line);
+      g.score.sc[j] = std::stod(line);
     }
     std::getline(ifs, g.score.grade, ',');
     
