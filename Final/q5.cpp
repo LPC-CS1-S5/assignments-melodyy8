@@ -56,7 +56,8 @@ int main()
 
     i++;
   }
-
+  
+  ifs.close();
   ofs.close();
   return 0;
 }
