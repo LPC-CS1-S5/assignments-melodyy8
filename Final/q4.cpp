@@ -15,7 +15,7 @@ int main()
   cout << "Enter user string "; 
   cin >> userinput;
   int ul = userinput.length();
-
+  string word;
   for (int i = 0; i < words.length(); i++)
   {
     if (words[i] == userinput[0])
@@ -29,13 +29,24 @@ int main()
         else if (j == ul - 1)
         {
           sum++;
-          cout << "Found at " << i << endl;
+          int k = i;
+          word = "";
+          while (words[k] != ' ' && k >= 0)
+          {
+            k--;
+          }
+          k++;
+          while (words[k] != ' ' && k < words.length())
+          {
+            word += words[k];
+            k++;
+          }
+          cout << "Found at " << i << " in " << word << endl;
         }
       }
     }
   }
 
-
-  cout << sum << endl;
+  cout << "Total: " << sum << " instances" << endl;
   return 0;
 }
